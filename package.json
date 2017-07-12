@@ -17,5 +17,10 @@
     "systemjs": "0.19.40",
     "typescript": "^2.1.6",
     "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

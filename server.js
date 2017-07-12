@@ -16,7 +16,7 @@ app.engine('html', ejs.renderFile);
 
 
 // Set Static Folder
-// app.use(express.static(path.join(workingDir), 'client'));
+app.use(express.static(path.join(workingDir, 'client')));
 
 // Body Parse MW
 app.use(bodyParser.json());

@@ -1,3 +1,9 @@
+# Mine #
+node_modules
+client/node_modules
+.sass-cache
+.vscode
+
 # Compiled source #
 ###################
 *.com
@@ -19,8 +25,6 @@
 *.rar
 *.tar
 *.zip
-node_modules
-client/node_modules
 
 # Logs and databases #
 ######################
