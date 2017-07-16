@@ -10,7 +10,7 @@ const workingDir = __dirname;
 const port = 3000;
 
 // View Engine
-app.set('views', path.join(workingDir, 'views'));
+app.set('views', path.join(workingDir, 'client/src'));
 app.set('view engine', 'ejs');
 app.engine('html', ejs.renderFile);
 

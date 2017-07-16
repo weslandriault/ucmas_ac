@@ -1,6 +1,7 @@
 # Mine #
 node_modules
 client/node_modules
+client/bower_components
 .sass-cache
 .vscode
 
