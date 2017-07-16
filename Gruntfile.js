@@ -4,7 +4,7 @@ function gruntInstructions(grunt) {
     sass: {
       dist: {
         files: {
-          'client/src/styles.css': 'client/src/styles/styles.scss'
+          'client/src/styles/styles.css': 'client/src/styles/styles.scss'
         }
       }
     },

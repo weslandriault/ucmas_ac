@@ -1,0 +1,21 @@
+{
+  "name": "ucmas_ac",
+  "version": "0.0.0",
+  "homepage": "https://github.com/weslandriault/ucmas_ac",
+  "authors": [
+    "Wes <wesley.landriault@gmail.com>"
+  ],
+  "description": "UCMAS Administrative Center Application",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.4.1"
+  }
+}

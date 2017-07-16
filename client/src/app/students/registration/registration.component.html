@@ -1,0 +1,195 @@
+<h2>Student Registration</h2>
+
+<form class="grid-container">
+  <div id="office-use-only">
+    <h3>For Office Use Only</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <label for=""><small>STUDENT REGISTRATION #</small>
+          <input type="text"/>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label>Batch Code
+          <input type="text" placeholder=""/>
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Course Instructor
+          <input type="text" placeholder=""/>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-3 cell">
+        <label>Batch Days
+          <input type="text" placeholder="Enter batch days"/>
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Batch Timings
+          <input type="text" placeholder=""/>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="child-details">
+    <h3>Details of the Child</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label>First Name
+          <input type="text" placeholder="Student's First Name">
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Last Name
+          <input type="text" placeholder="Student's Last Name">
+        </label>
+      </div>
+    </div>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <label>Date of Birth
+          <input type="date" placeholder="e.g 09/27/2010"/>
+        </label>
+      </div>
+      <div class="medium-offset-3 cell"></div>
+      <div class="medium-3 cell">
+        <label>Gender
+          <select>
+            <option value="volvo">Male</option>
+            <option value="saab">Female</option>
+            <option value="mercedes">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="medium-2 cell">
+        <label>Studying In Grade
+          <input type="number" placeholder="Input Grade Number"/>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <label>Address
+          <input type="text" placeholder="Enter student's home street address">
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-9 cell">
+        <label>City
+          <input type="text" placeholder="Enter student's city">
+        </label>
+      </div>
+      <div class="medium-offset-1 cell"></div>
+      <div class="medium-2 cell">
+        <label>Province
+          <select name="" id="">
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <label>Postal Code
+          <input type="text" placeholder="Enter student's Postal Code">
+        </label>
+      </div>
+
+      <div class="medium-2-offset cell"></div>
+
+      <div class="medium-6 cell">
+        <label>Phone # (Home)
+          <input type="tel" placeholder="Enter student's Home Phone Number">
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <label>Name of the School
+          <input type="text" placeholder="Enter the name of the school the student attends">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="general-details">
+    <h3>General Details</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <label>How did you hear about UCMAS?
+          <fieldset>
+            <legend>Select all that apply</legend>
+            <input id="checkbox1" type="checkbox"><label for="checkbox1">Friend's Referral</label>
+            <input id="checkbox2" type="checkbox"><label for="checkbox2">Newspaper Advt</label>
+            <input id="checkbox3" type="checkbox"><label for="checkbox3">TV Ads</label>
+            <input id="checkbox4" type="checkbox"><label for="checkbox3">Radio Ads</label>
+            <input id="checkbox5" type="checkbox"><label for="checkbox3">Flyers</label>
+            <input id="checkbox6" type="checkbox"><label for="checkbox3">Signage</label>
+            <input id="checkbox7" type="checkbox"><label for="checkbox3">Others</label>
+          </fieldset>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-8 cell">
+        <label>Preferred Days
+          <fieldset>
+            <input id="radio1" type="radio"><label for="radio1">Week-ends</label>
+            <input id="radio2" type="radio"><label for="radio2">Week-days</label>
+            <input id="radio3" type="radio"><label for="radio3">No preference</label>
+          </fieldset>
+        </label>
+      </div>
+
+      <div class="medium-4 cell">
+        <label for="preferred-timings">Preferred Timings
+          <input type="text" placeholder="Enter preferred time of day"/>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="medical-details">
+    <h3>Medical Details</h3>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label for="">Health Card Number
+          <input type="text" name="" placeholder="Enter health card number"/>
+        </label>
+      </div>
+      
+      <div class="medium-12 cell">
+        <label for="">If your child has any special conditions/Allergies/Medication, please provide details
+          <input type="text" placeholder="Enter medical details">
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
