@@ -1,38 +1,54 @@
 <h2>Student Registration</h2>
 
-<form class="grid-container">
+<form #studentRegistrationForm="ngForm" (ngSubmit)="onSubmit()" class="grid-container">
+  <div id="franchise-information">
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label for="franchisee">Franchisee
+          <input type="text" name="franchisee" [(ngModel)]="model.details.franchisee" disabled="disabled">
+        </label>
+      </div>
+
+      <div class="medium-6 cell">
+        <label for="locaiton">Location
+          <input type="text" name="location" [(ngModel)]="model.details.location" disabled="disabled">
+        </label>
+      </div>
+    </div>
+  </div>
+
   <div id="office-use-only">
     <h3>For Office Use Only</h3>
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
-        <label for=""><small>STUDENT REGISTRATION #</small>
-          <input type="text"/>
+        <label for="studentRegistrationNumber"><small>STUDENT REGISTRATION #</small>
+          <input type="text" name="studentRegistrationNumber" [(ngModel)]="model.details.studentRegistrationNumber" required/>
         </label>
       </div>
     </div>
 
     <div class="grid-x grid-margin-x">
       <div class="medium-6 cell">
-        <label>Batch Code
-          <input type="text" placeholder=""/>
+        <label for="batchCode">Batch Code
+          <input type="text" name="batchCode" [(ngModel)]="model.details.batchCode" placeholder=""/>
         </label>
       </div>
       <div class="medium-6 cell">
-        <label>Course Instructor
-          <input type="text" placeholder=""/>
+        <label for="courseInstructor">Course Instructor
+          <input type="text" name="courseInstructor" [(ngModel)]="model.details.courseInstructor" placeholder=""/>
         </label>
       </div>
     </div>
 
     <div class="grid-x grid-margin-x">
       <div class="medium-3 cell">
-        <label>Batch Days
-          <input type="text" placeholder="Enter batch days"/>
+        <label for="batchDays">Batch Days
+          <input type="text" name="batchDays" [(ngModel)]="model.details.batchDays" placeholder="Enter batch days"/>
         </label>
       </div>
       <div class="medium-6 cell">
-        <label>Batch Timings
-          <input type="text" placeholder=""/>
+        <label for="batchTimings">Batch Timings
+          <input type="text" name="batchTimings" [(ngModel)]="model.details.batchTimings" placeholder=""/>
         </label>
       </div>
     </div>
@@ -42,58 +58,56 @@
     <h3>Details of the Child</h3>
     <div class="grid-x grid-margin-x">
       <div class="medium-6 cell">
-        <label>First Name
-          <input type="text" placeholder="Student's First Name">
+        <label for="firstName">First Name
+          <input type="text" [(ngModel)]="model.firstName" placeholder="Student's First Name">
         </label>
       </div>
       <div class="medium-6 cell">
-        <label>Last Name
-          <input type="text" placeholder="Student's Last Name">
+        <label for="lastName">Last Name
+          <input name="lastName" type="text" [(ngModel)]="model.lastName" placeholder="Student's Last Name">
         </label>
       </div>
     </div>
     <div class="grid-x grid-margin-x">
       <div class="medium-4 cell">
-        <label>Date of Birth
-          <input type="date" placeholder="e.g 09/27/2010"/>
+        <label for="dateOfBirth">Date of Birth
+          <input name="dateOfBirth" type="date" [(ngModel)]="model.dateOfBirth" placeholder="e.g 09/27/2010"/>
         </label>
       </div>
       <div class="medium-offset-3 cell"></div>
       <div class="medium-3 cell">
-        <label>Gender
-          <select>
-            <option value="volvo">Male</option>
-            <option value="saab">Female</option>
-            <option value="mercedes">Other</option>
+        <label for="gender">Gender
+          <select name="gender" [(ngModel)]="model.gender">
+            <option *ngFor="let gender of genderOptions" [value]="gender">{{gender}}</option>
           </select>
         </label>
       </div>
 
       <div class="medium-2 cell">
-        <label>Studying In Grade
-          <input type="number" placeholder="Input Grade Number"/>
+        <label for="studyingInGrade">Studying In Grade
+          <input name="studyingInGrade" type="number" [(ngModel)]="model.studyingInGrade" placeholder="Input Grade Number" />
         </label>
       </div>
     </div>
 
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
-        <label>Address
-          <input type="text" placeholder="Enter student's home street address">
+        <label for="address">Address
+          <input name="address" type="text" [(ngModel)]="model.address.address" placeholder="Enter student's home street address">
         </label>
       </div>
     </div>
 
     <div class="grid-x grid-margin-x">
       <div class="medium-9 cell">
-        <label>City
-          <input type="text" placeholder="Enter student's city">
+        <label for="city">City
+          <input name="city" type="text" [(ngModel)]="model.address.city" placeholder="Enter student's city">
         </label>
       </div>
       <div class="medium-offset-1 cell"></div>
       <div class="medium-2 cell">
-        <label>Province
-          <select name="" id="">
+        <label for="province">Province
+          <select [(ngModel)]="model.address.province" name="province">
             <option value="AB">Alberta</option>
             <option value="BC">British Columbia</option>
             <option value="MB">Manitoba</option>
@@ -114,24 +128,24 @@
 
     <div class="grid-x grid-margin-x">
       <div class="medium-4 cell">
-        <label>Postal Code
-          <input type="text" placeholder="Enter student's Postal Code">
+        <label for="postalCode">Postal Code
+          <input name="postalCode" [(ngModel)]="model.address.postalCode" type="text" placeholder="Enter student's Postal Code">
         </label>
       </div>
 
       <div class="medium-2-offset cell"></div>
 
       <div class="medium-6 cell">
-        <label>Phone # (Home)
-          <input type="tel" placeholder="Enter student's Home Phone Number">
+        <label for="phoneNumber">Phone # (Home)
+          <input type="tel" name="phoneNumber" [(ngModel)]="model.address.phoneNumber" placeholder="Enter student's Home Phone Number">
         </label>
       </div>
     </div>
 
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
-        <label>Name of the School
-          <input type="text" placeholder="Enter the name of the school the student attends">
+        <label for="schoolName">Name of the School
+          <input type="text" name="schoolName" [(ngModel)]="model.address.schoolname" placeholder="Enter the name of the school the student attends">
         </label>
       </div>
     </div>
@@ -141,16 +155,11 @@
     <h3>General Details</h3>
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
-        <label>How did you hear about UCMAS?
+        <label for="directedFrom" >How did you hear about UCMAS?
           <fieldset>
             <legend>Select all that apply</legend>
-            <input id="checkbox1" type="checkbox"><label for="checkbox1">Friend's Referral</label>
-            <input id="checkbox2" type="checkbox"><label for="checkbox2">Newspaper Advt</label>
-            <input id="checkbox3" type="checkbox"><label for="checkbox3">TV Ads</label>
-            <input id="checkbox4" type="checkbox"><label for="checkbox3">Radio Ads</label>
-            <input id="checkbox5" type="checkbox"><label for="checkbox3">Flyers</label>
-            <input id="checkbox6" type="checkbox"><label for="checkbox3">Signage</label>
-            <input id="checkbox7" type="checkbox"><label for="checkbox3">Others</label>
+            <input *ngFor="let heardFrom of studentHeardFromOptions | keys" ([ngModel])="model.directedFrom[headFrom.key]" type="checkbox" [value]="heardFrom.value">
+            <label *ngFor="let heardFrom of studentHeardFromOptions">{{heardFrom}}</label>
           </fieldset>
         </label>
       </div>
@@ -158,18 +167,17 @@
 
     <div class="grid-x grid-margin-x">
       <div class="medium-8 cell">
-        <label>Preferred Days
+        <label for="preferredDays">Preferred Days
           <fieldset>
-            <input id="radio1" type="radio"><label for="radio1">Week-ends</label>
-            <input id="radio2" type="radio"><label for="radio2">Week-days</label>
-            <input id="radio3" type="radio"><label for="radio3">No preference</label>
+            <input name="preferredDays" type="radio" *ngFor="let preferredDay of preferredDays" ([ngModel])="model.preferences[preferredDay.key]" [value]="preferredDay.value" />
+            <label for="radio1" *ngFor="let preferredDay of preferredDays">{{preferredDay}}</label>
           </fieldset>
         </label>
       </div>
 
       <div class="medium-4 cell">
         <label for="preferred-timings">Preferred Timings
-          <input type="text" placeholder="Enter preferred time of day"/>
+          <input type="text" ([ngModel])="model.preferences.preferredTimings" placeholder="Enter preferred time of day"/>
         </label>
       </div>
     </div>
@@ -180,16 +188,18 @@
 
     <div class="grid-x grid-margin-x">
       <div class="medium-6 cell">
-        <label for="">Health Card Number
-          <input type="text" name="" placeholder="Enter health card number"/>
+        <label for="healthCardNumber">Health Card Number
+          <input type="text" name="healthCardNumber" ([ngModel])="model.medicalDetails.healthCardNumber" placeholder="Enter health card number"/>
         </label>
       </div>
       
       <div class="medium-12 cell">
-        <label for="">If your child has any special conditions/Allergies/Medication, please provide details
-          <input type="text" placeholder="Enter medical details">
+        <label for="specialMedicalInstructions">If your child has any special conditions/Allergies/Medication, please provide details
+          <input type="text" ([ngModel])="model.medicalDetails.specialMedicalInstructions" placeholder="Enter medical details">
         </label>
       </div>
     </div>
   </div>
+
+  <button type="submit" >Submit</button>
 </form>

@@ -7,6 +7,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { RegistrationComponent } from './students/registration/registration.component';
+import { PipeTransform, Pipe } from '@angular/core';
+
+@Pipe({name: 'keys'})
+
+class KeysPipe implements PipeTransform {
+  transform(value, args:string[]) : any {
+    let keys = [];
+    for (let key in value) {
+      keys.push(key);
+    }
+    return keys;
+  }
+}
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     StudentsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

@@ -5,3 +5,7 @@
 #app-content {
   @include xy-cell();
 }
+
+footer {
+  background-color: $topbar-background;
+}
