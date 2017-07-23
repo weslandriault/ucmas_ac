@@ -30,12 +30,12 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-6 cell">
         <label for="batchCode">Batch Code
-          <input type="text" name="batchCode" [(ngModel)]="model.details.batchCode" placeholder=""/>
+          <input type="text" name="batchCode" [(ngModel)]="model.details.batchCode" placeholder="" />
         </label>
       </div>
       <div class="medium-6 cell">
         <label for="courseInstructor">Course Instructor
-          <input type="text" name="courseInstructor" [(ngModel)]="model.details.courseInstructor" placeholder=""/>
+          <input type="text" name="courseInstructor" [(ngModel)]="model.details.courseInstructor" placeholder="" />
         </label>
       </div>
     </div>
@@ -43,12 +43,12 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-3 cell">
         <label for="batchDays">Batch Days
-          <input type="text" name="batchDays" [(ngModel)]="model.details.batchDays" placeholder="Enter batch days"/>
+          <input type="text" name="batchDays" [(ngModel)]="model.details.batchDays" placeholder="Enter batch days" />
         </label>
       </div>
       <div class="medium-6 cell">
         <label for="batchTimings">Batch Timings
-          <input type="text" name="batchTimings" [(ngModel)]="model.details.batchTimings" placeholder=""/>
+          <input type="text" name="batchTimings" [(ngModel)]="model.details.batchTimings" placeholder="Enter the batch timings" />
         </label>
       </div>
     </div>
@@ -59,12 +59,12 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-6 cell">
         <label for="firstName">First Name
-          <input type="text" [(ngModel)]="model.firstName" placeholder="Student's First Name">
+          <input type="text" name="firstName" [(ngModel)]="model.firstName" placeholder="Student's First Name">
         </label>
       </div>
       <div class="medium-6 cell">
         <label for="lastName">Last Name
-          <input name="lastName" type="text" [(ngModel)]="model.lastName" placeholder="Student's Last Name">
+          <input name="lastName" name="lastName" type="text" [(ngModel)]="model.lastName" placeholder="Student's Last Name">
         </label>
       </div>
     </div>
@@ -93,7 +93,7 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
         <label for="address">Address
-          <input name="address" type="text" [(ngModel)]="model.address.address" placeholder="Enter student's home street address">
+          <input name="address" type="text" [(ngModel)]="model.contactInfo.address" placeholder="Enter student's home street address">
         </label>
       </div>
     </div>
@@ -101,13 +101,13 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-9 cell">
         <label for="city">City
-          <input name="city" type="text" [(ngModel)]="model.address.city" placeholder="Enter student's city">
+          <input name="city" type="text" [(ngModel)]="model.contactInfo.city" placeholder="Enter student's city">
         </label>
       </div>
       <div class="medium-offset-1 cell"></div>
       <div class="medium-2 cell">
         <label for="province">Province
-          <select [(ngModel)]="model.address.province" name="province">
+          <select [(ngModel)]="model.contactInfo.province" name="province">
             <option value="AB">Alberta</option>
             <option value="BC">British Columbia</option>
             <option value="MB">Manitoba</option>
@@ -129,7 +129,7 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-4 cell">
         <label for="postalCode">Postal Code
-          <input name="postalCode" [(ngModel)]="model.address.postalCode" type="text" placeholder="Enter student's Postal Code">
+          <input name="postalCode" [(ngModel)]="model.contactInfo.postalCode" type="text" placeholder="Enter student's Postal Code">
         </label>
       </div>
 
@@ -137,7 +137,7 @@
 
       <div class="medium-6 cell">
         <label for="phoneNumber">Phone # (Home)
-          <input type="tel" name="phoneNumber" [(ngModel)]="model.address.phoneNumber" placeholder="Enter student's Home Phone Number">
+          <input type="tel" name="phoneNumber" [(ngModel)]="model.contactInfo.phoneNumber" placeholder="Enter student's Home Phone Number">
         </label>
       </div>
     </div>
@@ -145,7 +145,7 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
         <label for="schoolName">Name of the School
-          <input type="text" name="schoolName" [(ngModel)]="model.address.schoolname" placeholder="Enter the name of the school the student attends">
+          <input type="text" name="schoolName" [(ngModel)]="model.contactInfo.schoolname" placeholder="Enter the name of the school the student attends">
         </label>
       </div>
     </div>
@@ -158,8 +158,10 @@
         <label for="directedFrom" >How did you hear about UCMAS?
           <fieldset>
             <legend>Select all that apply</legend>
-            <input *ngFor="let heardFrom of studentHeardFromOptions | keys" ([ngModel])="model.directedFrom[headFrom.key]" type="checkbox" [value]="heardFrom.value">
-            <label *ngFor="let heardFrom of studentHeardFromOptions">{{heardFrom}}</label>
+            <div class="checkbox-group" *ngFor="let key of model.directedFrom | keys">
+              <input [checked]="model.directedFrom[key]" (change)="model.directedFrom[key] = !model.directedFrom[key]" name="{{key}}" type="checkbox" />
+              <label>{{studentHeardFromOptions[key]}}</label>
+            </div>
           </fieldset>
         </label>
       </div>
@@ -169,8 +171,10 @@
       <div class="medium-8 cell">
         <label for="preferredDays">Preferred Days
           <fieldset>
-            <input name="preferredDays" type="radio" *ngFor="let preferredDay of preferredDays" ([ngModel])="model.preferences[preferredDay.key]" [value]="preferredDay.value" />
-            <label for="radio1" *ngFor="let preferredDay of preferredDays">{{preferredDay}}</label>
+            <div class="radio-btn-group" *ngFor="let preferredDay of preferredDays">
+              <input name="preferredDays" type="radio" [checked]="model.preferences.preferredDays === preferredDay" (change)="model.preferences.preferredDays = preferredDay" />
+              <label for="radio1">{{preferredDay}}</label>
+            </div>
           </fieldset>
         </label>
       </div>

@@ -31,7 +31,18 @@ export class RegistrationComponent {
     others: 'Others'
   }
 
-  model = new Student();
+  model = new Student({
+    details: {
+      studentRegistrationNumber: null,
+      batchCode: null,
+      courseInstructor: null,
+      batchDays: null,
+      batchTimings: null,
+      beginClassDate: null,
+      franchisee: 'UCMAS Waterloo',
+      location: 'Waterloo'
+    }
+  });
 
   onSubmit = function () {
     console.log(this.model);
