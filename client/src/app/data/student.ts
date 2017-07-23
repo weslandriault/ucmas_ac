@@ -1,3 +1,5 @@
+import { Parent } from './parent';
+
 interface Details {
   studentRegistrationNumber: string,
   batchCode: string,
@@ -92,6 +94,11 @@ export class Student {
   public directedFrom: DirectedFrom = defaultDirectedFrom;
   public preferences: Preferences = defaultPreferences;
   public medicalDetails: MedicalDetails = defaultMedicalDetails;
+  public parents: [Parent] = [
+    { role: 'Mother', fullName: '', phoneNumber: '', email: ''},
+    { role: 'Father', fullName: '', phoneNumber: '', email: ''}
+  ];
+  public formIdNo: number = null
 
   public constructor(studentObj?:Partial<Student>) {
     Object.assign(this, studentObj);

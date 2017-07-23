@@ -151,6 +151,44 @@
     </div>
   </div>
 
+  <div id="details-of-parents">
+    <h3>Details of Parents</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label for="preferredDays">Mother's Name
+          <input type="text" name="mothersName" [(ngModel)]="model.parents[0].fullName">
+        </label>
+      </div>
+
+      <div class="medium-6 cell">
+        <label for="preferredDays">Father's Name
+          <input type="text" name="fathersName" [(ngModel)]="model.parents[1].fullName">
+        </label>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+      <div class="medium-2 cell">
+        <label for="preferredDays">Mother's Cell #:
+          <input type="text" name="mothersPhoneNumber" [(ngModel)]="model.parents[0].phoneNumber">
+        </label>
+      </div>
+
+      <div class="medium-2 cell">
+        <label for="preferredDays">Father's Cell #;
+          <input type="text" name="fathersPhoneNumber" [(ngModel)]="model.parents[1].phoneNumber">
+        </label>
+      </div>
+
+      <div class="medium-8 cell">
+        <label for="email">Email
+          <input type="text" name="familyEmail" [ngModel]="familyEmail" (ngModelChange)="model.parents[0].email = model.parents[1].email = $event" />
+        </label>
+          <h3>{{familyEmail.name}}</h3>
+      </div>
+    </div>
+  </div>
+
   <div id="general-details">
     <h3>General Details</h3>
     <div class="grid-x grid-margin-x">
@@ -166,6 +204,7 @@
         </label>
       </div>
     </div>
+    
 
     <div class="grid-x grid-margin-x">
       <div class="medium-8 cell">
