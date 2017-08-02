@@ -25,6 +25,7 @@ class KeysPipe implements PipeTransform {
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'students', component: StudentsComponent },
+  { path: 'students/registration', component: RegistrationComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,32 @@
-<students-registration></students-registration>
+<h2>Students</h2>
+
+<div class="grid-x grid-margin-x">
+  <div class="medium-10 cell">
+    <h3>Waterloo Center</h3>
+
+  </div>
+
+  <div class="medium-2 cell">
+    <button class="button primary" (click)="goToRegistration()">Register New Student</button>
+  </div>
+</div>
+
+<table class="hover">
+  <thead>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Age</th>
+    <th>School Grade</th>
+    <th>Registration Number</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.firstName}} {{student.lastName}}</td>
+      <td>{{student.status}}</td>
+      <td>{{calculateAge(student.dateOfBirth)}}</td>
+      <td>Grade {{student.studyingInGrade}}</td>
+      <td>{{student.studentRegistrationNumber}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -6,6 +6,7 @@ const studentSchema = new db.Schema({
   gender: String,
   details: {
     studentRegistrationNumber: String,
+    studyingInGrade: Number,
     batchCode: String,
     courseInstructor: String,
     batchDays: String,

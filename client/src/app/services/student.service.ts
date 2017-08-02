@@ -14,12 +14,23 @@ export class StudentService {
 
   constructor(private http: Http) { };
 
+  findAll(): Promise<Student[]> {
+    return this.http
+      .get('/api/students', { headers: this.headers })
+      .toPromise()
+      .then(res => {
+        return res.json() as Student[]
+      })
+      .catch(this.handleError)
+  }
+
   create(student: Student): Promise<Student> {
     const reqData = JSON.stringify(student);
+
     return this.http
       .post('/api/students', reqData, { headers: this.headers })
       .toPromise()
-      .then(res => res.json().data as Student)
+      .then(res => res.json() as Student)
       .catch(this.handleError);
-    }
+  }
 }
