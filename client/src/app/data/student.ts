@@ -8,7 +8,8 @@ interface Details {
   batchTimings: string,
   beginClassDate: string
   franchisee: string,
-  location: string
+  location: string,
+  studyingInGrade: number
 }
 
 interface ContactInfo {
@@ -48,7 +49,8 @@ let defaultDetails: Details = {
   batchTimings: '',
   beginClassDate: '',
   franchisee: '',
-  location: ''
+  location: '',
+  studyingInGrade: null
 }
 
 let defaultContactInfo: ContactInfo = {
@@ -86,7 +88,6 @@ export class Student {
   public dateOfBirth: string = '';
   public gender: string = '';
   public details: Details = defaultDetails;
-  public studyingInGrade: number;
   public contactInfo: ContactInfo = defaultContactInfo;
   public creationDate: string = '';
   public lastModifiedDate: string = '';

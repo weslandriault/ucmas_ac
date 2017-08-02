@@ -44,7 +44,8 @@ export class RegistrationComponent {
       batchTimings: null,
       beginClassDate: null,
       franchisee: 'UCMAS Waterloo',
-      location: 'Waterloo'
+      location: 'Waterloo',
+      studyingInGrade: null
     }
   });
 
