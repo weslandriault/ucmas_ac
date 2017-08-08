@@ -38,7 +38,7 @@ router.post('/students', function _handleCreationEvents(req, res) {
     return;
   }
 
-  console.log('check out the json: ' + JSON.stringify(req.body))
+  studentObj.status = 'active';
 
   Promise.map(parents, function _createParent(parent) {
     console.log('sending in the parent: ')

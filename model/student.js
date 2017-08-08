@@ -1,9 +1,14 @@
 const db = require('./db');
+const studentStatus = {
+  type: String,
+  enum: ['active', 'drop out', 'on break', 'graduated']
+};
 const studentSchema = new db.Schema({
   firstName: String,
   lastName: String,
   dateOfBirth: String,
   gender: String,
+  status: studentStatus,
   details: {
     studentRegistrationNumber: String,
     studyingInGrade: Number,

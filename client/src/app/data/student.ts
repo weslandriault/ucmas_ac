@@ -87,6 +87,7 @@ export class Student {
   public lastName: string = '';
   public dateOfBirth: string = '';
   public gender: string = '';
+  public status: string = '';
   public details: Details = defaultDetails;
   public contactInfo: ContactInfo = defaultContactInfo;
   public creationDate: string = '';
